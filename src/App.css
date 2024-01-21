@@ -1,0 +1,214 @@
+body {
+    background-image: url("./concrete.jpg"); /* The image used as a background. */
+    background-repeat: no-repeat; /* The background image will not repeat. */
+    background-attachment: fixed; /* The background image will not scroll with the page. */
+    background-size: cover; /* The background image will cover the entire area of the element. */
+  }
+  /* Styling for the introduction text of the application. */
+  .intro {
+    text-align: center; /* The text is centered. */
+    color: #610564; /* The color of the text. */
+    font-size: 24px; /* The size of the text. */
+    padding: 24px; /* The padding around the text. */
+    margin-left: 21px; /* The margin to the left of the text. */
+    padding-right: 100px; /* The padding to the right of the text. */
+    padding-left: 100px; /* The padding to the left of the text. */
+  }
+  /* Styling for the container that holds the player cards. */
+  .players {
+    /* The player cards are displayed using flexbox. */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Styling for individual player cards. */
+  .player-card {
+    width: 360px; /* The width of the card. */
+    height: 450px; /* The height of the card. */
+    margin: 10px; /* The margin around the card. */
+    background-color: antiquewhite;
+    border: 3px solid;
+    border-radius: 8px;
+    box-shadow: inset;
+    overflow: hidden; /* Any content that goes outside the card will be hidden. */
+    position: relative; /* The card's position is set to relative so it can be moved using the transform property. */
+    transition: transform 0.3s; /* Transition effect for the transform property. */
+  }
+  /* Styling for when a user hovers over a player card. */
+  .player-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .player-image-container {
+    display: grid;
+    place-items: center;
+    height: 300px; /* The height of the image container. */
+    padding: 10px; /* The padding around the image. */
+  }
+  /* Styling for the player's image. */
+  .player-image {
+    width: 250px; /* The width of the image. */
+    height: 250px; /* The height of the image. */
+    object-fit: cover;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Styling for the player's details (name, breed, status). */
+  .player-details {
+    display: flex;
+    flex-direction: column; /* The details are arranged in a column. */
+    align-items: center; /* The details are centered along the vertical axis. */
+    justify-content: center; /* The details are centered along the horizontal axis. */
+    color: #000; /* The color of the details text. */
+    font-size: 16px; /* The size of the details text. */
+    text-align: center; /* The details text is centered. */
+  }
+  
+  .player-details p {
+    color: #666;
+  }
+  
+  .delete-button {
+    background-color: #ff5555;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #f9f9f9;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+    border: #610564 solid 1px;
+    padding: 2px;
+    margin: auto;
+    background-color: #610564;
+  }
+  
+  
+  .navbar a:hover {
+    color: #610564; /* Hovered link color */
+    border: #ffffff solid 1px;
+    padding: 2px;
+    margin: auto;
+    background-color: #ffffff;
+  }
+  
+  .search {
+    float: left;
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .search-icon-wrapper {
+    padding: 10px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-base {
+    color: inherit;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    padding-left: 30px;
+    transition: width 0.3s;
+    outline: none;
+  }
+  
+  .input-base:focus {
+    width: 150px;
+  }
+  
+  /* Form */
+  
+  .form {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background-color: #45a049;
+  }
+  
+  .form .error {
+    color: #f00;
+    margin-top: 8px;
+  }
+  
+  /* Styling for the search bar container */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    width: 200px; 
+  }
+  
+  
+  .search-button {
+    padding: 8px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
