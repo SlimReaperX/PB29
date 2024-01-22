@@ -8,11 +8,11 @@ export const puppyBowlApi = createApi({
   endpoints: (builder) => ({
     getAllPlayers: builder.query({ query: () => "/players" }),
     getSinglePlayer: builder.query({ query: (id) => "/players/" + id }),
-  AddPlayer: builder.mutation({
-    query: (newPlayer) => ({
+  addPlayer: builder.mutation({
+    query: (Body) => ({
       url: "/players",
       method: "POST",
-      body: newPlayer,
+      body: Body,
     }),
   }),
   deletePlayer: builder.mutation({

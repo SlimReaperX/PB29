@@ -7,8 +7,8 @@ const NewPlayer = () => {
   const [playerData, setPlayerData] = useState({
     name: "",
     breed: "",
-    status: "",
     imageUrl: "",
+    teamId: "",
   });
   const [createPlayer, { isLoading }] = useAddPlayerMutation();
 
@@ -21,13 +21,15 @@ const NewPlayer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      await createPlayer(playerData);
-      console.log("player successfully created!!");
+      let info = await createPlayer(playerData);
+      console.log(info);
+      Navigate("/");
     } catch (error) {
       console.error("Error creating player:", error);
+      // Additional error handling, e.g., displaying user notification
     }
-    Navigate("/");
   };
 
   return (
@@ -55,21 +57,21 @@ const NewPlayer = () => {
         </label>
         <br />
         <label>
-          Status:
+        Image URL:
           <input
             type="text"
-            name="status"
-            value={playerData.status}
+            name="imageUrl"
+            value={playerData.imageUrl}
             onChange={handleChange}
           />
         </label>
         <br />
         <label>
-          Image URL:
+          Team Id:
           <input
-            type="text"
-            name="imageUrl"
-            value={playerData.imageUrl}
+            type="number"
+            name="teamId"
+            value={playerData.teamId}
             onChange={handleChange}
           />
         </label>

@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react";
 
 const SinglePlayer = () => {
   const params = useParams();
-  const navigate = useNavigate;
+  const navigate = useNavigate()
   const [player, setplayer] = useState([]);
   const { data, isLoading, isError } = useGetSinglePlayerQuery(params.id);
   const [deletePlayer] = useDeletePlayerMutation();
+
 
   useEffect(() => {
     if (data) {
@@ -32,17 +33,17 @@ const SinglePlayer = () => {
         <h1>Error loading player details</h1>
       ) : (
         <div className="player-card">
-          <img
+          <img onClick={() => navigate (`/`)}
             src={data.data.player.imageUrl}
             alt={data.data.player.name}
             className="player-image"
           />
-          <div className="player-details">
+          <div className="player-details"
+        onClick={handleDelete}>
             <h2>{data.data.player.name}</h2>
             <p>Breed: {data.data.player.breed}</p>
-            <p>Status: {data.data.player.status}</p>
+            <p>Team Id: {data.data.player.teamId}</p>
           </div>
-          <button onClick={handleDelete}>Delete Player</button>
         </div>
       )}
     </div>

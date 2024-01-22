@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { puppyBowlApi } from "./Api";
-import * as searchActions from "./searchActions"
+
 
 const PuppyBowlSlice = createSlice({
     name: "PuppyBowl",
@@ -9,8 +9,8 @@ const PuppyBowlSlice = createSlice({
       searchQuery: "",
     },
     reducers: {
-      setSearchQuery: (state, action) => {
-        state.searchQuery = action.payload;
+      setPlayer: (state, action) => {
+        state.players = action.payload;
       },
     },
     extraReducers: (builder) => {
@@ -26,5 +26,4 @@ const PuppyBowlSlice = createSlice({
   export const { setSearchQuery } = PuppyBowlSlice.actions;
   export const selectPlayers = (state) => state.PuppyBowl.players;
   export const selectSearchQuery = (state) => state.PuppyBowl.searchQuery;
-  export { searchActions };
   export default PuppyBowlSlice.reducer;
